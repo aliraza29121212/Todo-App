@@ -48,8 +48,8 @@ let createTasks = () => {
   data.map((x, y) => {
     return (tasks.innerHTML += `
     <div id=${y} class="mt-4">
-  <span class="fw-bold display-5">${x.title}</span>
-  <p>${x.description}</p>
+  <span class="title">${x.title}</span>
+  <p class="desc">${x.description}</p>
   <span>
     <button onClick="editTask(this)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#form">Edit</button>
     <button onClick="deleteTask(this);createTasks()" class="btn btn-danger">Delete</button>
