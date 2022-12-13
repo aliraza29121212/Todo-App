@@ -11,16 +11,14 @@ form.addEventListener("submit", (e) => {
 });
 
 let formValidation = () => {
+  // this is for form valiation
   if (textInput.value === "") {
-    console.log("failure");
     msg.innerHTML = "Task cannot be blank";
   } else {
-    console.log("success");
     msg.innerHTML = "";
     acceptData();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
-
     (() => {
       add.setAttribute("data-bs-dismiss", "");
     })();
@@ -34,15 +32,13 @@ let acceptData = () => {
     title: textInput.value,
     description: textarea.value,
   });
-
-  localStorage.setItem("data", JSON.stringify(data));
-
-  console.log(data);
+  localStorage.setItem("data", JSON.stringify(data)); // set data for local storage as well
   createTasks();
   textInput.value = "";
   textarea.value = "";
 };
 
+// for creating new task
 let createTasks = () => {
   tasks.innerHTML = "";
   data.map((x, y) => {
@@ -59,12 +55,15 @@ let createTasks = () => {
   });
 };
 
+// this is for delete task from doto
 let deleteTask = (e) => {
   e.parentElement.parentElement.remove();
   data.splice(e.parentElement.parentElement.id, 1);
-  localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem("data", JSON.stringify(data)); // for deleting localstorage as well
   console.log(data);
 };
+
+// this is for an edit todo
 let editTask = (e) => {
   let selectedTask = e.parentElement.parentElement;
 
@@ -76,15 +75,14 @@ let editTask = (e) => {
 
 (() => {
   data = JSON.parse(localStorage.getItem("data")) || [];
-  console.log(data);
   createTasks();
 })();
 
+// this is for an filter the doto list
 function myFunction() {
-  var input, filter, ul, li, a, i, txtValue;
+  var input, filter, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
-  console.log(filter);
 
   parentDiv = document.getElementById("tasks");
   div = parentDiv.getElementsByTagName("div");
