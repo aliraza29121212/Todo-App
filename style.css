@@ -1,0 +1,20 @@
+.app {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+#addNew {
+  display: flex;
+  justify-content: space-between;
+}
+
+#task div {
+  pad: 5px;
+  display: grid;
+  gap: 4px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div>
+        <input
+          type="text"
+          id="myInput"
+          onkeyup="myFunction()"
+          placeholder="Search for names.."
+          title="Type in a name"
+          class="form-control mb-5"
+        />
+        <h4>Todo App</h4>
+        <div
+          id="addNew"
+          data-bs-toggle="modal"
+          data-bs-target="#form"
+          class="px-2 py-3 border border-dark mb-5"
+        >
+          <span>Add New Todo</span>
+          <span>+</span>
+        </div>
+
+        <!-- Modal -->
+        <form
+          class="modal fade"
+          id="form"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Todo</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body text-left">
+                <p>Task Title</p>
+                <div id="msg" class="color-red"></div>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="textInput"
+                  required
+                  placeholder="Task Title"
+                />
+                <br />
+                <p>Task Details</p>
+                <div id="msg" class="color-red"></div>
+                <textarea
+                  required
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="textarea"
+                  cols="30"
+                  rows="5"
+                  placeholder="Task Details"
+                ></textarea>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" id="add" class="btn btn-primary">
+                  Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <h5>Tasks</h5>
+        <div id="tasks"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
